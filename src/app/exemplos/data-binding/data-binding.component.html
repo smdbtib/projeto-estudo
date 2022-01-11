@@ -1,0 +1,30 @@
+<hr/>
+<section>
+  <h3>Interpolação</h3>
+  <hr/>
+  <p>{{name}}</p>
+  <p> Seu nome é {{name}}</p>
+</section>
+<section>
+  <h3>Property binding</h3>
+  <hr/>
+  <img [src]="link"/>
+</section>
+<section>
+  <h3>Event binding</h3>
+  <hr/>
+  <button (click)="alert()">Alert</button>
+</section>
+<section>
+  <h3>Two-way data binding</h3>
+  <hr/>
+  <input type="text" placeholder="Full Name" [(ngModel)] ="fullName"/>
+  <p>{{fullName}}</p>
+  <h4>Exemple 2</h4>
+  <input type="text" placeholder="Nome" [(ngModel)] ="student.fullName"/>
+  <input type="text" placeholder="Age" [(ngModel)] ="student.age"/>
+  <input type="text" placeholder="Nota 1" [(ngModel)] ="student.note1"/>
+  <input type="text" placeholder="Nota 2" [(ngModel)] ="student.note2"/>
+  <input type="text" placeholder="Nota 3" [(ngModel)] ="student.note3"/>
+  <p>{{student | json }}</p>
+</section>
