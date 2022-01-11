@@ -1,0 +1,9 @@
+<section>
+  <hr/>
+  <h2>Exercício Dois</h2>
+  <h2 [ngClass]="{'older-age': age >= 18, 'younger-age': age < 18}">Age: {{age}}</h2> <!-- ALTERANDO CLASSES VIA CONDICIONAL -->
+  <button (click)="aumentarAge()"> Age +</button>
+  <button (click)="diminuirAge()"> Age -</button>
+  <h2 [class.older-age] = "age >= 18" >Age: {{age}}</h2> <!-- USANDO CLASSE DO SCSS E APLICANDO UMA CONDICIONAL -->
+  <p *ngIf="age > 32">Fez neversário</p>  <!-- *ngIf - DIRETIVA ESTRUTURAL  CONDICIONAL PARA MOSTRAR OU NÃO NO HTML -->
+</section>
