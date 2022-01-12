@@ -1,0 +1,18 @@
+<section>
+  <h2>Built-in Pipes</h2>
+  <hr/>
+  <h4>Uppercase : {{nome | uppercase}}</h4>
+  <h4>Lowercase : {{nome | lowercase}}</h4>
+  <h4>Titlecase : {{nome | titlecase}}</h4>
+  <h4>Data : {{date | date}}</h4>
+  <h4>Data "máscara": "{{date | date: 'dd/MM/yyyy'}}</h4>
+  <h4>Data "máscara":  {{date | date: 'dd/M/yy'}}</h4>
+  <h4>Data "máscara":  {{date | date: 'dd-MM-yyyy'}}</h4>
+  <h4>Data "máscara":  {{date | date: 'MM, yyyy'}}</h4>
+  <h4>Data "máscara":  {{date | date: 'short'}}</h4>
+  <h4>Data "máscara":  {{date | date: 'full'}}</h4>
+  <h4>Percentual:  {{percentual | percent}}</h4>
+  <h4>Percentual:  {{percentual | percent: '1.0-2'}}</h4>
+  <h4>Salário:  {{salario | currency:'BRL': 'symbol':'1.2-5'}}</h4>
+  <h4>Json:  {{user | json}}</h4>
+</section>

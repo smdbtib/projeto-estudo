@@ -1,0 +1,84 @@
+<mat-card>
+  <div class="example-container">
+    <mat-label>Nome</mat-label><br>
+    <input matInput #input maxlength="10">
+  </div>
+  <div class="example-container">
+    <mat-label>Sexo</mat-label><br>
+    <input matInput #input maxlength="10">
+  </div>
+  <div class="example-container">
+    <mat-label>Endereço</mat-label><br>
+    <input matInput #input maxlength="10">
+  </div>
+  <div class="example-container">
+    <mat-label>CPF</mat-label><br>
+    <input matInput #input maxlength="10">
+  </div>
+  <div class="example-container">
+    <mat-label>Telefone</mat-label><br>
+    <input matInput  required>
+    <mat-error></mat-error>
+  </div>
+  <div class="example-container">
+    <mat-label>Data de Nascimento</mat-label><br>
+    <input matInput #input maxlength="10">
+  </div>
+  <div class="example-container">
+    <mat-label>Convênio</mat-label><br>
+    <input matInput #input maxlength="10">
+  </div>
+</mat-card>
+<mat-card>
+<!-- Table Category -->
+<table mat-table [dataSource]="pacientes" class="mat-elevation-z8">
+ <!-- Id -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>#CÓDIGO PACIENTE</th>
+    <td mat-cell *matCellDef="let paciente">#{{paciente.id}} </td>
+  </ng-container>
+<!-- Nome -->
+<ng-container matColumnDef="nome">
+  <th mat-header-cell *matHeaderCellDef>NOME</th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.nome}} </td>
+</ng-container>
+<!-- Sexo -->
+<ng-container matColumnDef="sexo">
+  <th mat-header-cell *matHeaderCellDef>SEXO</th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.sexo}} </td>
+</ng-container>
+<!-- Enderaço -->
+<ng-container matColumnDef="endereco">
+  <th mat-header-cell *matHeaderCellDef>ENDEREÇO</th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.endereco}} </td>
+</ng-container>
+<!-- CPF -->
+<ng-container matColumnDef="cpf">
+  <th mat-header-cell *matHeaderCellDef> CPF </th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.cpf}} </td>
+</ng-container>
+<!-- Telefone -->
+<ng-container matColumnDef="telefone">
+  <th mat-header-cell *matHeaderCellDef>TELEFONE</th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.telefone}} </td>
+</ng-container>
+<!--  Data Nascimento -->
+<ng-container matColumnDef="dataNascimento">
+  <th mat-header-cell *matHeaderCellDef>DATA NASCIMENTO</th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.dataNascimento | date: 'dd-MM-yyyy'}} </td>
+</ng-container>
+<!--  Convênio -->
+<ng-container matColumnDef="convenio">
+  <th mat-header-cell *matHeaderCellDef> CONVÊNIO </th>
+  <td mat-cell *matCellDef="let paciente"> {{paciente.convenio | uppercase}} </td>
+</ng-container>
+<!--  Ações -->
+<ng-container matColumnDef="acoes">
+  <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+  <td mat-cell *matCellDef="let paciente" ><button mat-raised-button color="warn" (click)="delete(paciente.id)" >Deletar</button></td>
+</ng-container>
+<tr mat-header-row *matHeaderRowDef="viewColumn"></tr>
+<tr mat-row *matRowDef="let row; columns: viewColumn;"></tr>
+</table>
+</mat-card>
+

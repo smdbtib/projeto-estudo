@@ -1,0 +1,33 @@
+<section>
+  <h3>*ngIf - Diretiva estrutural </h3> <!-- *ngIf Diretiva estrutural -->
+  <hr/>
+  <p *ngIf="!hide">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <button (click)="setHide()" [disabled]="hide" >Hide</button>
+</section>
+
+<section>
+  <h3>*ngFor - Diretiva estrutural </h3> <!--  *ngFor Diretiva estrutural -->
+  <hr/>
+  <input [(ngModel)] = "alimento" placeholder="Digite um item"/>
+  <button (click)="addAlimento()">ADD</button>
+  <ul>
+    <li *ngFor="let compra of compras, let i = index">{{i}} - {{compra}}</li>
+  </ul>
+</section>
+
+<section>
+  <h3>*ngSwitch - Diretiva estrutural </h3> <!--  *ngSwitch Diretiva estrutural -->
+  <hr/>
+  <select [(ngModel)]="status">
+    <option value="loading">Loading</option>
+    <option value="error">Erro</option>
+    <option value="data">Data</option>
+  </select>
+  <div [ngSwitch]="status">
+    <p *ngSwitchCase="'loading'">Carregando...</p>
+    <p *ngSwitchCase="'error'">Um erro ocorreu...</p>
+    <p *ngSwitchCase="'data'">Dadod recebidos...</p>
+    <p *ngSwitchDefault>Erro desconhecido...</p>
+
+  </div>
+</section>
