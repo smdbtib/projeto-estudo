@@ -1,7 +1,7 @@
 <mat-card>
   <div class="example-container">
     <mat-label>Nome</mat-label><br>
-    <input matInput #input maxlength="10">
+    <input type="text" [(ngModel)]="nome">
   </div>
   <div class="example-container">
     <mat-label>Sexo</mat-label><br>
@@ -22,12 +22,13 @@
   </div>
   <div class="example-container">
     <mat-label>Data de Nascimento</mat-label><br>
-    <input matInput #input maxlength="10">
+    <input type="date" [(ngModel)]="dataNascimento" >
   </div>
   <div class="example-container">
     <mat-label>Convênio</mat-label><br>
     <input matInput #input maxlength="10">
   </div>
+  <button (click)="add()">Add</button>
 </mat-card>
 <mat-card>
 <!-- Table Category -->

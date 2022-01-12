@@ -10,14 +10,14 @@ export class ExercicioPacientesComponent implements OnInit {
   constructor() { }
 
   id = '28';
-  nomeAdd = 'Samuel';
+  nome = 'Samuel';
   sexo = '';
   endereco= '';
   cpf= '';
   telefone= '';
   dataNascimento= '';
   convenio= '';
-  addPaciente: Pacientes = {id: this.id, nome: this.nomeAdd, sexo: this.sexo, endereco: this.endereco, cpf: this.cpf, telefone: this.telefone, dataNascimento: this.dataNascimento, convenio: this.convenio}
+  addPaciente: Pacientes = {id: this.id, nome: this.nome, sexo: this.sexo, endereco: this.endereco, cpf: this.cpf, telefone: this.telefone, dataNascimento: this.dataNascimento, convenio: this.convenio}
 
   pacientes: Pacientes[] = [
     {id: '12', nome: 'Samuel Dias', sexo: 'M', endereco: 'Rua São Bartlomeu', cpf: '0000000000', telefone: '00000000', dataNascimento: '03/05/1989', convenio: 'Viva'},
@@ -32,7 +32,9 @@ export class ExercicioPacientesComponent implements OnInit {
   }
 
   add(){
-    this.pacientes.push(this.addPaciente);
+    console.log(this.addPaciente);
+    this.pacientes = [...this.pacientes, this.addPaciente];
+    //this.pacientes.push(this.addPaciente);
    }
 
   viewColumn = ['id', 'nome', 'sexo' ,'endereco', 'cpf', 'telefone', 'dataNascimento', 'convenio', 'acoes'];
