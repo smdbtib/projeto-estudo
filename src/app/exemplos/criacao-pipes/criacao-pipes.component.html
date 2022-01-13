@@ -1,11 +1,37 @@
-<input type="text" placeholder="Buscar linguagem" [(ngModel)]="query">
-<!-- <p>{{ linguagens | filter: query.value}}</p> -->
 
-<ul>
-  <li *ngFor="let lang of linguagens |  filter: query">{{lang}}</li>
-</ul>
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>Pipe - obfsEmail</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p> {{ "samueldias@gmail.com" | obfsEmail }}</p>
+  </mat-card-content>
+</mat-card>
 
-<hr/>
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>Pipe - Filter</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content>
+    <input type="text" placeholder="Buscar linguagem" [(ngModel)]="query" />
+  <!-- <p>{{ linguagens | filter: query.value}}</p> -->
+  <ul>
+    <li *ngFor="let lang of linguagens | filter: query">{{ lang }}</li>
+  </ul>
+  </mat-card-content>
+</mat-card>
 
-<h3>{{numeros | inc}}</h3>
-<button (click)="add()">Add + 1 </button>
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>Pipe - Incrementado numero</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content>
+  <h3>{{ numeros | inc }}</h3>
+  <button (click)="add()">Add + 1</button>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
